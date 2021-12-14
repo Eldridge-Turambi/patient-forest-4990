@@ -1,0 +1,23 @@
+<%= @movie.title %>
+<%= @movie.creation_year %>
+<%= @movie.genre %>
+
+<% actors_1 = @movie.actors.sort_by do |actor| %>
+  <% actor.age %>
+<% end %>
+
+<% actors_1.each do |actor| %>
+  <%= actor.name %>
+<% end %>
+
+<% actors_1 = @movie.actors.sort_by do |actor| %>
+  <% actor.age %>
+<% end %>
+
+<% age_array = @movie.actors.map do |actor| %>
+  <% actor.age %>
+<% end %>
+
+<% age_array.pop[-1] %>
+
+<%= age_array.sum / age_array.count %>
