@@ -21,3 +21,16 @@
 <% age_array.pop[-1] %>
 
 <%= age_array.sum / age_array.count %>
+
+<%= form_with url: "/movies/#{@movie.id}", method: :post, local: true do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :age %>
+  <%= f.text_field :age %>
+
+  <%= f.submit "Create Actor" %>
+<% end %>
+
+<% @movie.actors.each do |actor| %>
+<% end %>
